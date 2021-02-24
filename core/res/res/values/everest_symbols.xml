@@ -4,5 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-
+  <!-- Location indicator -->
+  <java-symbol type="drawable" name="stat_sys_location" />
 </resources>
