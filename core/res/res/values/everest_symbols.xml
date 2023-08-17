@@ -44,10 +44,6 @@
      <!-- Whether device supports an alt. ambient display -->
      <java-symbol type="bool" name="config_alt_ambient_display" />
 
-     <!-- SystemUI Restart -->
-     <java-symbol type="string" name="systemui_restart_title" />
-     <java-symbol type="string" name="systemui_restart_message" />
-
     <!-- Health interface -->
     <java-symbol type="bool" name="config_chargingControlEnabled" />
     <java-symbol type="integer" name="config_defaultChargingControlMode" />
@@ -129,4 +125,8 @@
     <!-- Soft restart dialog -->
     <java-symbol type="string" name="system_restart_title" />
     <java-symbol type="string" name="system_restart_message" />
+    
+    <!-- SystemUI restart dialog -->
+    <java-symbol type="string" name="systemui_restart_title" />
+    <java-symbol type="string" name="systemui_restart_message" />
 </resources>
