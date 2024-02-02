@@ -2777,6 +2777,9 @@ public class KeyguardViewMediator implements CoreStartable, Dumpable,
             userActivity();
             mUpdateMonitor.setKeyguardGoingAway(false);
             mKeyguardViewControllerLazy.get().setKeyguardGoingAwayState(false);
+            System.gc();
+            System.runFinalization();
+            System.gc();
             mShowKeyguardWakeLock.release();
         }
         mKeyguardDisplayManager.show();
