@@ -467,14 +467,16 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
 
     @Override
     public void onUiModeChanged() {
-        mContext.getTheme().applyStyle(mContext.getThemeResId(), true);
         if (mDialog != null) {
             mDialog.dismiss();
-            mDialog = null;
         }
+        mContext.getTheme().applyStyle(mContext.getThemeResId(), true);
     }
 
     public void init(int windowType, Callback callback) {
+        if (mDialog != null) {
+            mDialog.dismiss();
+        }
         initDialog(mActivityManager.getLockTaskModeState());
 
         mController.addCallback(mControllerCallbackH, mHandler);
@@ -574,7 +576,6 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
         Log.d(TAG, "initDialog: called!");
         if (mDialog != null) {
             mDialog.dismiss();
-            mDialog = null;
         }
         if (mConfigurableTexts != null) {
             mConfigurableTexts = null;
@@ -2851,6 +2852,9 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
 
     @Override
     public void onConfigChanged(Configuration config) {
+        if (mDialog != null) {
+            mDialog.dismiss();
+        }
         mOrientation = config.orientation;
     }
 
@@ -2884,7 +2888,6 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
         public void onConfigurationChanged() {
             if (mDialog != null) {
                 mDialog.dismiss();
-                mDialog = null;
             }
         }
 
